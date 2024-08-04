@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting with Animated Background</title>
+    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Emilys+Candy&family=Michroma&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="bgAnimation" id="bgAnimation">
+        <div class="backgroundAmim"></div>
+    </div>
+    <div class="container">
+        <div class="content-box">
+            <div id="content">
+                <h1 id="question"></h1>
+                <div class="table" id="table"></div>
+                <button id="vote" class=""><span class="text">Vote</span><i class='fas fa-circle-notch fa-spin'></i></button>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

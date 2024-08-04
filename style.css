@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Michroma", sans-serif;
+}
+
+body {
+    color: #fff;
+    background: #111;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    backdrop-filter: blur(1px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+}
+
+.content-box {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    width: 100%;
+}
+
+.table {
+    display: table;
+    margin: 20px auto;
+    width: 100%;
+}
+
+.tr {
+    display: table-row;
+    cursor: pointer;
+    transition: all 300ms;
+}
+
+.td {
+    display: table-cell;
+    font-size: 20px;
+    padding: 10px;
+    text-align: left;
+}
+
+.td.check {
+    padding-right: 20px;
+}
+
+.tr:hover {
+    transform: scale(1.05);
+}
+
+button {
+    background-color: white;
+    color: #00bfff;
+    border-radius: 1000px;
+    font-size: 20px;
+    padding: 10px 30px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: all 300ms, transform 100ms;
+    opacity: 0;
+    width: 100%;
+}
+
+button > * {
+    color: black;
+    transition: all 300ms;
+}
+
+button:not(.loading):hover > * {
+    color: white;
+}
+
+button i {
+    display: none !important;
+}
+
+button.loading {
+    background-color: transparent;
+}
+
+button.loading i {
+    display: inline-block !important;
+    color: white;
+}
+
+button.loading .text {
+    display: none;
+}
+
+button:not(.loading):hover {
+    background-color: black;
+    color: white;
+}
+
+button:active {
+    outline: 0;
+    transform: translateY(3px);
+}
+
+button:focus {
+    outline: 0;
+}
+
+button.shown {
+    opacity: 1;
+}
+
+.tr.active {
+    font-weight: bold;
+    transform: scale(1.1);
+}
+
+.tr.active i::before {
+    content: "\f14a";
+}
+
+.tr.active i {
+    font-weight: 700;
+}
+
+/* Background Animation Styles */
+.bgAnimation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: repeat(20, 1fr);
+    background: #1d1d1d;
+    filter: saturate(2);
+    overflow: hidden;
+}
+
+.colorBox {
+    z-index: 2;
+    filter: brightness(1.1);
+    transition: 2s ease;
+    position: relative;
+    margin: 2px;
+    background: #1d1d1d;
+}
+
+.colorBox:hover {
+    background: #00bfff;
+    transition-duration: 0s;
+}
+
+.backgroundAmim {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: #00bfff;
+    filter: blur(60px);
+    animation: animBack 6s linear infinite;
+}
+
+@keyframes animBack {
+    0% {
+        top: -60px;
+    }
+    100% {
+        top: 120%;
+    }
+}
+
+@media (max-width: 600px) {
+    .content-box {
+        padding: 20px;
+    }
+    .td {
+        font-size: 16px;
+    }
+    button {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+    .tr:hover {
+        transform: none;
+    }
+    .tr.active {
+        transform: none;
+    }
+}
