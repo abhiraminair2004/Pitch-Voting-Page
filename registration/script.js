@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const container = document.getElementById('bgAnimation');
-    const colorBoxes = 400; // 20x20 grid
+    const colorBoxes = 400;
 
     for (let i = 0; i < colorBoxes; i++) {
         const colorBox = document.createElement('div');
