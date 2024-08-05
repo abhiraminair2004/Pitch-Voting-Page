@@ -1,0 +1,162 @@
+body {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background: linear-gradient(135deg, #87CEEB, #9370DB);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 20px 0;
+}
+
+.container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+    width: 400px;
+    margin: auto;
+    position: relative;
+    z-index: 10;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.gradient-text {
+    color: #811281; /* Fallback color */
+    background: linear-gradient(45deg, #690369, #058d8d);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #555;
+}
+
+input[type="text"],
+input[type="tel"] {
+    width: 100%;
+   padding: 0.5rem 0 0.5rem 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+button {
+    width: 100%;
+    padding: 0.75rem;
+    background: linear-gradient(135deg, #87CEEB, #9370DB);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: opacity 0.3s;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.bgAnimation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: repeat(20, 1fr);
+    background: #1d1d1d;
+    filter: saturate(2);
+    z-index: 1;
+    min-height: 120vh;
+}
+
+.colorBox {
+    z-index: 2;
+    filter: brightness(1.1);
+    transition: 2s ease;
+    position: relative;
+    margin: 2px;
+    background: #1d1d1d;
+}
+
+.colorBox:hover {
+    background: #00bfff;
+    transition-duration: 0s;
+}
+
+.backgroundAnim {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: #00bfff;
+    filter: blur(60px);
+    animation: animBack 6s linear infinite;
+}
+
+@keyframes animBack {
+    0% {
+        top: -60px;
+    }
+    100% {
+        top: 120%;
+    }
+}
+@media (max-width: 768px) {
+    .container {
+        padding: 1.5rem;
+        width: 90%;
+    }
+
+    .gradient-text {
+        font-size: 20px;
+    }
+
+    button {
+        padding: 0.6rem;
+        font-size: 0.9rem;
+    }
+
+    input[type="text"],
+    input[type="tel"] {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1rem;
+        width: 100%;
+    }
+
+    .gradient-text {
+        font-size: 18px;
+    }
+
+    button {
+        padding: 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    input[type="text"],
+    input[type="tel"] {
+        font-size: 0.8rem;
+    }
+}
