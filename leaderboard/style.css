@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+
+@keyframes moveGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+body {
+    background: linear-gradient(-45deg, #e2972d, #a763c1,#a763c1, #e2972d);
+    background-size: 400% 400%;
+    animation: moveGradient 15s ease infinite;
+    font-family: 'Amatic SC', cursive;
+    margin: 0;
+    padding: 0;
+}
+
+#root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 445px;
+    height: 500px;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 7px 9px 7px #00000052;
+}
+
+
+.topLeadersList {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    min-height: 180px;
+    padding-top: 1rem;
+    
+}
+
+.leader {
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    height: 180px;
+    margin: 0 10px;
+}
+
+.leaderName {
+    font-size: 22px;
+}
+
+.leaderScore {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.podium {
+    width: 80px;
+    border-radius: 5px 5px 0 0;
+}
+
+#first-place {
+    order: 2;
+}
+
+#first-place .podium {
+    height: 120px;
+    background-color: #ffd700;
+}
+
+#second-place {
+    order: 1;
+}
+
+#second-place .podium {
+    height: 90px;
+    background-color: #c0c0c0;
+}
+
+#third-place {
+    order: 3;
+}
+
+#third-place .podium {
+    height: 60px;
+    background-color: #cd7f32;
+}
+
+.playerslist {
+    margin-top: 2rem;
+    font-size: 16px;
+    color: white;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.table {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 1fr 1fr;
+    text-align: center;
+    padding: 10px 0;
+    border-bottom: 1px solid white;
+    background-color: #212121;
+}
+
+.list {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.player {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 1fr 1fr;
+    align-items: center;
+    min-height: 42px;
+    text-align: center;
+    padding: 5px 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.player:nth-child(odd) {
+    background-color: #b159ffcc;
+}
+
+.player:nth-child(even) {
+    background-color: #330b7775;
+}
+
+.list::-webkit-scrollbar {
+    width: 6px;
+    background-color: #F5F5F5;
+}
+
+.list::-webkit-scrollbar-thumb {
+    background-color: #646464;
+}
+
+.list::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+}

@@ -11,9 +11,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.getElementById('registrationForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    
-    // Here you would typically send the form data to a server
-    // For this example, we'll just log it to the console
     console.log('Team Registration Submitted!');
     console.log('Team Name:', document.getElementById('teamName').value);
     console.log('Member 1:', document.getElementById('member1').value);
