@@ -1,50 +1,45 @@
 @import url('https://fonts.googleapis.com/css?family=Amatic+SC');
 
-@keyframes moveGradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
 body {
-    background: linear-gradient(-45deg, #e2972d, #a763c1,#a763c1, #e2972d);
-    background-size: 400% 400%;
-    animation: moveGradient 15s ease infinite;
     font-family: 'Amatic SC', cursive;
+    background: linear-gradient(135deg, #87CEEB, #9370DB);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 0;
     padding: 0;
+    min-height: 100vh; 
+    overflow: hidden; 
 }
 
 #root {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100%;
+    width: 100%;
+    padding: 1rem;
+    position: relative;
+    z-index: 2; 
 }
 
 .container {
-    width: 445px;
-    height: 500px;
-    background-color: rgba(0, 0, 0, 0.8);
+    width: 90%;
+    max-width: 445px;
+    height: auto;
     padding: 1rem;
+    background-color: black;
     border-radius: 5px;
     box-shadow: 7px 9px 7px #00000052;
+    color: white;
 }
-
 
 .topLeadersList {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: flex-end;
     min-height: 180px;
     padding-top: 1rem;
-    
 }
 
 .leader {
@@ -55,7 +50,7 @@ body {
     align-items: center;
     justify-content: flex-end;
     height: 180px;
-    margin: 0 10px;
+    margin: 0 5px;
 }
 
 .leaderName {
@@ -68,7 +63,7 @@ body {
 }
 
 .podium {
-    width: 80px;
+    width: 60px;
     border-radius: 5px 5px 0 0;
 }
 
@@ -103,7 +98,7 @@ body {
     margin-top: 2rem;
     font-size: 16px;
     color: white;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .table {
@@ -148,6 +143,159 @@ body {
 }
 
 .list::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     background-color: #F5F5F5;
+}
+
+.bgAnimation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: repeat(20, 1fr);
+    background: #1d1d1d;
+    filter: saturate(2);
+    z-index: 1;
+    min-height: 120vh;
+}
+
+.colorBox {
+    z-index: 2;
+    filter: brightness(1.1);
+    transition: 2s ease;
+    position: relative;
+    margin: 2px;
+    background: #1d1d1d;
+}
+
+.colorBox:hover {
+    background: #00bfff;
+    transition-duration: 0s;
+}
+
+.backgroundAnim {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: #00bfff;
+    filter: blur(60px);
+    animation: animBack 6s linear infinite;
+}
+
+@keyframes animBack {
+    0% {
+        top: -60px;
+    }
+    100% {
+        top: 120%;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        max-width: 400px;
+    }
+
+    .topLeadersList {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .leader {
+        height: 150px;
+        margin: 5px;
+    }
+
+    .leaderName {
+        font-size: 18px;
+    }
+
+    .leaderScore {
+        font-size: 12px;
+    }
+
+    .podium {
+        width: 50px;
+    }
+
+    #first-place .podium {
+        height: 100px;
+    }
+
+    #second-place .podium {
+        height: 80px;
+    }
+
+    #third-place .podium {
+        height: 50px;
+    }
+
+    .playerslist {
+        font-size: 14px;
+    }
+
+    .table {
+        grid-template-columns: 0.4fr 2fr 0.8fr 0.8fr;
+    }
+
+    .player {
+        grid-template-columns: 0.4fr 2fr 0.8fr 0.8fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 98%;
+        max-width: 350px;
+    }
+
+    .topLeadersList {
+        min-height: 150px;
+    }
+
+    .leader {
+        height: 120px;
+    }
+
+    .leaderName {
+        font-size: 16px;
+    }
+
+    .leaderScore {
+        font-size: 10px;
+    }
+
+    .podium {
+        width: 40px;
+    }
+
+    #first-place .podium {
+        height: 80px;
+    }
+
+    #second-place .podium {
+        height: 60px;
+    }
+
+    #third-place .podium {
+        height: 40px;
+    }
+
+    .playerslist {
+        font-size: 12px;
+    }
+
+    .table {
+        grid-template-columns: 0.3fr 2fr 0.7fr 0.7fr;
+    }
+
+    .player {
+        grid-template-columns: 0.3fr 2fr 0.7fr 0.7fr;
+    }
 }
